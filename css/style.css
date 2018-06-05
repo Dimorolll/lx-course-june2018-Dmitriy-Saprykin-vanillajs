@@ -1,4 +1,4 @@
-/*============    ШРИФТЫ    ===========*/
+/*============    FONTS    ===========*/
 @font-face {
   font-family: "BentonSans";
   src: url("../fonts/BentonSans Medium.otf") format("truetype");
@@ -27,7 +27,7 @@
   color: #352d2b;
   font-weight: light;
 }
-/*============    Основа    ===========*/
+/*============    BODY    ===========*/
 * {
   box-sizing: border-box;
 }
@@ -60,7 +60,8 @@ body:before {
   left: 0;
   background: #417ead;
 }
-body .container {
+/*============  BODY -> CONTAINER  ===========*/
+.container {
   width: 1200px;
   margin-right: auto;
   margin-left: auto;
@@ -69,96 +70,94 @@ body .container {
   flex-direction: row;
   min-height: 100vh;
 }
-body .container aside {
+/*============  BODY -> CONTAINER -> ASIDE  ===========*/
+aside {
   min-width: 30%;
   background: #ffffff;
   border-top: 4px solid #417ead;
   border-right: 2px solid #e9e5e2;
   position: relative;
 }
-body .container aside header {
+/*==========  BODY -> CONTAINER -> ASIDE -> HEADER  =========*/
+header {
   border-bottom: 2px solid #e9e5e2;
 }
-body .container aside header .top {
+header .top {
   position: relative;
   padding: 0 5px;
 }
-body .container aside header .top .fa-chevron-left {
+header .top .fa-chevron-left {
   position: absolute;
+  padding: 12px 10px;
 }
-body .container aside header p {
+header p {
   text-align: center;
 }
-body .container aside header .search {
+header .search {
   position: relative;
   padding: 0 5px 2px 5px;
 }
-body .container aside header .search input {
+header .search input {
   width: 100%;
   padding: 0 50px 0 5px;
 }
-body .container aside header .search .fa {
+header .search .fa {
   position: absolute;
   top: 4px;
 }
-body .container aside header .search .fa-search {
+header .search .fa-search {
   right: 35px;
 }
-body .container aside header .search .fa-refresh {
+header .search .fa-refresh {
   right: 15px;
 }
-body .container aside .order-list {
+/*======  BODY -> CONTAINER -> ASIDE -> ORDER-LIST (after HEADER)  =====*/
+.order-list {
   overflow-y: auto;
   position: absolute;
   top: 60px;
   bottom: 40px;
   width: 100%;
 }
-body .container aside .order-list::-webkit-scrollbar {
-  width: 12px;
-}
-body .container aside .order-list::-webkit-scrollbar-thumb {
-  border-width: 1px 1px 1px 2px;
-  border-color: #555;
-  background-color: #777;
-}
-body .container aside .order-list .order {
+.order-list .order {
   border-bottom: 1px solid #e9e5e2;
   padding: 10px 10px 0 10px;
+  margin: 0;
 }
-body .container aside .order-list .order .order-top {
+.order-list .order .order-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-body .container aside .order-list .order .order-top .order-number {
+.order-list .order .order-top .order-number {
   margin: 0;
   font-size: 16px;
 }
-body .container aside .order-list .order .order-top .order-date {
+.order-list .order .order-top .order-date {
   margin: 0;
   font-size: 18px;
 }
-body .container aside .order-list .order .order-bottom {
+.order-list .order .order-bottom {
   display: flex;
   justify-content: space-between;
 }
-body .container aside .order-list .order .order-bottom .order-info {
+.order-list .order .order-bottom .order-info {
   position: relative;
 }
-body .container aside .order-list .order .order-bottom .order-in-time {
+.order-list .order .order-bottom .order-in-time {
   color: #2d722f;
 }
-body .container aside .order-list .order .order-bottom .order-urgent {
+.order-list .order .order-bottom .order-urgent {
   color: #e58650;
 }
-body .container aside .order-list .order .order-bottom .order-status {
+.order-list .order .order-bottom .order-status {
   position: relative;
 }
-body .container aside .order-list .active {
+.order-list .active {
   background: #e8eff7;
 }
-body .container aside footer .fa {
+/*==========  BODY -> CONTAINER -> ASIDE -> FOOTER (after HEADER and ORDER-LIST)  =========*/
+footer .fa {
   font-size: 16px;
   color: #ffffff;
   padding: 12px 10px;
@@ -167,66 +166,80 @@ body .container aside footer .fa {
   position: absolute;
   text-align: left;
 }
-body .container aside footer .fa-filter {
+footer .fa-filter {
   right: 45px;
 }
-body .container aside footer .fa-bars {
+footer .fa-bars {
   right: 15px;
 }
-body .container main {
+/*============    BODY -> CONTAINER -> MAIN    ===========*/
+main {
   min-width: 70%;
   background: #ffffff;
   position: relative;
   padding-bottom: 40px;
   border-top: 4px solid #417ead;
 }
-body .container main header {
+/*=========  BODY -> CONTAINER -> MAIN -> HEADER  ========*/
+header {
+  position: absolute;
+  top: 0px;
+  z-index: 2;
+  width: 100%;
   background: #eff4f8;
 }
-body .container main header p {
+header p {
   margin: 0;
   padding: 12px 0;
   text-align: center;
 }
-body .container main .order-view {
+/*========  BODY -> CONTAINER -> MAIN -> ORDER-WRAP (after HEADER)  =======*/
+.order-wrap {
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  width: 100%;
+  overflow-y: auto;
+}
+.order-wrap .order-view {
   padding: 10px 10px 0 10px;
   background: #eff4f8;
 }
-body .container main .order-view .order-headline {
+.order-wrap .order-view .order-headline {
   display: flex;
   justify-content: space-between;
   padding: 15px 15px 0 15px;
 }
-body .container main .order-view .order-headline p {
+.order-wrap .order-view .order-headline p {
   margin: 0 0;
 }
-body .container main .order-view .order-headline .order-head-number {
+.order-wrap .order-view .order-headline .order-head-number {
   font-weight: bold;
   font-size: 16px;
 }
-body .container main .order-view .order-headline .order-head-cost {
+.order-wrap .order-view .order-headline .order-head-cost {
   font-size: 16px;
 }
-body .container main .order-view .order-headline .order-head-cost .order-currency {
+.order-wrap .order-view .order-headline .order-head-cost .order-currency {
   font-size: 12px;
   text-align: right;
 }
-body .container main .order-view .order-specification {
+.order-wrap .order-view .order-specification {
   padding: 0 15px;
 }
-body .container main .order-view .order-icons {
+.order-wrap .order-view .order-icons {
   padding: 15px 15px 0 15px;
   display: flex;
   position: relative;
   border-collapse: collapse;
 }
-body .container main .order-view .order-icons .order-icon-wrap {
+.order-wrap .order-view .order-icons .order-icon-wrap {
   margin-right: 40px;
   margin-bottom: -2px;
   width: 50px;
   height: 70px;
 }
-body .container main .order-view .order-icons .order-icon-wrap .order-icon-circle {
+.order-wrap .order-view .order-icons .order-icon-wrap .order-icon-circle {
   position: relative;
   display: flex;
   align-items: center;
@@ -240,100 +253,117 @@ body .container main .order-view .order-icons .order-icon-wrap .order-icon-circl
   border: 1px solid #417ead;
   color: #417ead;
 }
-body .container main .order-view .order-icons .active {
+.order-wrap .order-view .order-icons .active {
   background: #eff4f8;
   border-bottom: 1px solid #417ead;
 }
-body .container main .order-view .order-icons .active .order-icon-circle {
+.order-wrap .order-view .order-icons .active .order-icon-circle {
   background: #417ead;
   color: #ffffff;
 }
-body .container main .order-address {
+.order-wrap .order-address {
   border-bottom: 4px solid #e9e5e2;
   padding: 10px 10px;
 }
-body .container main .order-address .order-shipping-address {
+.order-wrap .order-address .order-shipping-address {
   border-bottom: 2px solid #e9e5e2;
 }
-body .container main .order-address .order-shipping-address p {
+.order-wrap .order-address .order-shipping-address p {
   padding: 0 15px;
   font-weight: bold;
   font-size: 14px;
 }
-body .container main .order-address .order-items {
-  display: flex;
+.order-wrap .order-address .order-items {
   padding: 15px 0;
 }
-body .container main .order-address .order-items .order-designation {
-  margin: 0 5px 0 100px;
+.order-wrap .order-address .order-items .order-item {
+  display: flex;
 }
-body .container main .order-address .order-items .order-designation p {
+.order-wrap .order-address .order-items .order-item .order-key {
+  margin: 0 5px 0 100px;
+  width: 89px;
+}
+.order-wrap .order-address .order-items .order-item .order-key p {
   text-align: right;
   margin: 3px 0;
 }
-body .container main .order-address .order-items .order-signification {
+.order-wrap .order-address .order-items .order-item .order-value {
   justify-content: flex-start;
   margin: 0 5px;
 }
-body .container main .order-address .order-items .order-signification p {
+.order-wrap .order-address .order-items .order-item .order-value p {
   margin: 3px 0;
 }
-body .container main .borderbottom {
+.order-wrap .border-bottom {
   border-bottom: 2px solid #e9e5e2;
 }
-body .container main .order-line-items {
+.order-wrap .order-line-items {
   padding: 10px 10px;
   background: #fafafa;
 }
-body .container main .order-line-items .order-line-items-name p {
+.order-wrap .order-line-items .order-line-items-name p {
   padding: 0 15px;
   font-weight: bold;
   font-size: 14px;
 }
-body .container main .order-line-items .order-table {
+.order-wrap .order-line-items .order-table {
   margin: 0 5px 5px 5px;
+  width: 100%;
+  border: none;
+  border-collapse: collapse;
 }
-body .container main .order-line-items .order-table .table-head {
+.order-wrap .order-line-items .order-table .table-head {
   border-top: 1px solid #e9e5e2;
   padding: 5px 0;
   height: 36px !important;
   background: #eee !important;
 }
-body .container main .order-line-items .order-table .table-line {
+.order-wrap .order-line-items .order-table .table-line {
   display: flex;
   border-bottom: 1px solid #e9e5e2;
   height: 50px;
   background: #ffffff;
 }
-body .container main .order-line-items .order-table .table-line .columns {
+.order-wrap .order-line-items .order-table .table-line .columns {
   position: relative;
   width: 25%;
   padding: 5px 10px;
 }
-body .container main .order-line-items .order-table .table-line .columns p {
+.order-wrap .order-line-items .order-table .table-line .columns p {
   margin: 0;
 }
-body .container main .order-line-items .order-table .table-line .column-first {
+.order-wrap .order-line-items .order-table .table-line .column-first {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-body .container main .order-line-items .order-table .table-line .column-option {
+.order-wrap .order-line-items .order-table .table-line .column-option {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-body .container main footer .fa-envelope-o {
+/*========  BODY -> CONTAINER -> MAIN -> FOOTER (after HEADER and ORDER-WRAP)  =======*/
+footer .fa-envelope-o {
   font-size: 16px;
   color: #ffffff;
   padding: 12px 10px;
   display: flex;
   justify-content: flex-end;
 }
+/*============    SETTINGS FOR ALL PARTS    ===========*/
 footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   background: #2f3b47;
   height: 40px;
+  z-index: 2;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-thumb {
+  border-width: 1px 1px 1px 2px;
+  border-color: #555;
+  background-color: #777;
 }
